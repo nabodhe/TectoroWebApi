@@ -3,12 +3,14 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30711.63
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TectoroWebApi", "TectoroWebApi\TectoroWebApi.csproj", "{8B654E0D-E53A-43D3-BFCE-41B6716DD1C1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TectoroWebApi", "TectoroWebApi\TectoroWebApi.csproj", "{8B654E0D-E53A-43D3-BFCE-41B6716DD1C1}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Database", "Database", "{1C7B2C55-FC65-4D0A-800A-F7F294A4DBEB}"
 	ProjectSection(SolutionItems) = preProject
 		TectoroUserDb.sql = TectoroUserDb.sql
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TectoroTestWebApi", "TectoroTestWebApi\TectoroTestWebApi.csproj", "{7FFDA085-0EC8-425A-B3F8-20D0E0B4918F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -20,6 +22,10 @@ Global
 		{8B654E0D-E53A-43D3-BFCE-41B6716DD1C1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8B654E0D-E53A-43D3-BFCE-41B6716DD1C1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8B654E0D-E53A-43D3-BFCE-41B6716DD1C1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7FFDA085-0EC8-425A-B3F8-20D0E0B4918F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7FFDA085-0EC8-425A-B3F8-20D0E0B4918F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7FFDA085-0EC8-425A-B3F8-20D0E0B4918F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7FFDA085-0EC8-425A-B3F8-20D0E0B4918F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

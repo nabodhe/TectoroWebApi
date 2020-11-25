@@ -18,8 +18,7 @@
       }
     },
     "TectoroWebApi": {
-      "commandName": "Executable",
-      "executablePath": "C:\\Users\\JamesBond\\source\\repos\\TectoroWebApi\\API\\TectoroWebApi\\TectoroWebApi\\TectoroWebApi.csproj",
+      "commandName": "Project",
       "launchBrowser": true,
       "launchUrl": "api/values",
       "environmentVariables": {

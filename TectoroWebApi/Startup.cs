@@ -44,6 +44,7 @@ namespace TectoroWebApi
 
             app.UseHttpsRedirection();
             app.UseMvc();
+            
         }
     }
 }

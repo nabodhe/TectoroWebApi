@@ -1,6 +1,7 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
+using System.Configuration;
 
 namespace TectoroWebApi
 {
@@ -21,8 +22,8 @@ namespace TectoroWebApi
         {
             if (!optionsBuilder.IsConfigured)
             {
-#warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
-                optionsBuilder.UseSqlServer("Server=VEDHASPC;Data Source=VEDHASPC\\JAMESBONDDB;Initial Catalog=TectoroUserDb;User Id=sa;Password=tiger");
+//#warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
+                optionsBuilder.UseSqlServer(ConfigurationManager.ConnectionStrings["TectoroUsersDB"].ToString());
             }
         }
 
