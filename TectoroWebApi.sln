@@ -10,7 +10,15 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Database", "Database", "{1C
 		TectoroUserDb.sql = TectoroUserDb.sql
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TectoroTestWebApi", "TectoroTestWebApi\TectoroTestWebApi.csproj", "{7FFDA085-0EC8-425A-B3F8-20D0E0B4918F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TectoroTestWebApi", "TectoroTestWebApi\TectoroTestWebApi.csproj", "{7FFDA085-0EC8-425A-B3F8-20D0E0B4918F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test_Evidence", "Test_Evidence", "{20E56D56-1CDE-4F95-8F40-AC6BE89471B2}"
+	ProjectSection(SolutionItems) = preProject
+		Test_Evidence\DataFrom_SQLServerDB.PNG = Test_Evidence\DataFrom_SQLServerDB.PNG
+		Test_Evidence\DataFrom_SQLServerDB_ClientRecord.PNG = Test_Evidence\DataFrom_SQLServerDB_ClientRecord.PNG
+		Test_Evidence\ReturningClientData.PNG = Test_Evidence\ReturningClientData.PNG
+		Test_Evidence\ReturningManagerData.PNG = Test_Evidence\ReturningManagerData.PNG
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

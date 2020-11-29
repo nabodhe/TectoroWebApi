@@ -2,9 +2,13 @@
   "iisSettings": {
     "windowsAuthentication": false,
     "anonymousAuthentication": true,
+    "iis": {
+      "applicationUrl": "http://localhost/TectoroWebApi",
+      "sslPort": 0
+    },
     "iisExpress": {
       "applicationUrl": "http://localhost:51434",
-      "sslPort": 44347
+      "sslPort": 44353
     }
   },
   "$schema": "http://json.schemastore.org/launchsettings.json",
@@ -12,7 +16,7 @@
     "IIS Express": {
       "commandName": "IISExpress",
       "launchBrowser": true,
-      "launchUrl": "api/users",
+      "launchUrl": "api/users/GetManagerOrClient/Manager",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }

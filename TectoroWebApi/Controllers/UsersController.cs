@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using TectoroWebApi;
+using TectoroWebApi.Models;
 
 namespace TectoroWebApi.Controllers
 {
@@ -14,7 +15,41 @@ namespace TectoroWebApi.Controllers
     public class UsersController : ControllerBase
     {
         private readonly TectoroUserDbContext _context;
-
+        const string MANAGER_STR = "MANAGER";
+        const string CLIENT_STR = "CLIENT";
+        protected DbContext DBContextObject
+        {
+            get
+            {
+                return _context;
+            }
+        }
+        protected IEnumerable<UserType> GetUsersProperty(string userType = null)
+        {
+            IEnumerable<Users> users = _context.Users;
+            List<UserType> userTypeList = new List<UserType>();
+            if (userType.ToUpper().Equals(MANAGER_STR))
+            {
+                var tmgrList = (users.Where(u => !string.IsNullOrEmpty(u.Position)));
+                foreach (var item in tmgrList)
+                {
+                    var mgr = new UserType(item, userType);
+                    userTypeList.Add(mgr);
+                    UserType.Clients(users, mgr);
+                }
+            }
+            else if (userType.ToUpper().Equals(CLIENT_STR))
+            {
+                var tClient = users.Where(u => u.Level.HasValue);
+                foreach (var item in tClient)
+                {
+                    var client = new UserType(item, userType);
+                    userTypeList.Add(client);
+                    UserType.ManagerList(users, client);
+                }
+            }
+            return userTypeList;
+        }
         public UsersController(TectoroUserDbContext context)
         {
             _context = context;
@@ -24,7 +59,19 @@ namespace TectoroWebApi.Controllers
         [HttpGet]
         public IEnumerable<Users> GetUsers()
         {
-            return _context.Users;
+            return GetUsersProperty();
+        }
+
+        [HttpGet]
+        [Route("[action]/{userType}")]
+        public IEnumerable<UserType> GetManagerOrClient(string userType)
+        {
+            if (!ModelState.IsValid)
+            {
+                return null;
+            }
+            IEnumerable<UserType> result = GetUsersProperty(userType);
+            return result;
         }
 
         // GET: api/Users/5
